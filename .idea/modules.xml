@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BridgeLabz-SIPP-Training.iml" filepath="$PROJECT_DIR$/BridgeLabz-SIPP-Training.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ControlFlow/ControlFlow.iml" filepath="$PROJECT_DIR$/ControlFlow/ControlFlow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProgrammingElements/ProgrammingElements.iml" filepath="$PROJECT_DIR$/ProgrammingElements/ProgrammingElements.iml" />
+    </modules>
+  </component>
+</project>
