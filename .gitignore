@@ -1,6 +1,8 @@
 # IntelliJ IDEA files
 .idea/
+
 # IntelliJ IDEA project files
 *.iml
+
 # Compiled output
 out/
