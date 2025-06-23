@@ -42,6 +42,9 @@ The core content of this repository is organized into the following main directo
     * `Level1/` - Introduction to commonly used built-in Java functions (e.g., from `Math`, `System`).
     * `Level2/` - Exploring more specialized built-in functions and their practical applications.
 
+* **`StringExtras/`**
+    * Some extra coding problems on strings.
+
 
 ---
 
