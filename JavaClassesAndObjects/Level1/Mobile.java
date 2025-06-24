@@ -18,7 +18,7 @@ class Mobile {
     }
 
     public static void main(String[] args) {
-        Mobile phone = new Mobile("Samsung", "Galaxy S24", 79999);
+        Mobile phone = new Mobile("Samsung", "Galaxy S25 Ultra", 129999);
         phone.displayDetails();
     }
 }

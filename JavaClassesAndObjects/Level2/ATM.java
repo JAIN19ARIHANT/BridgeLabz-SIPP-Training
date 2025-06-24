@@ -21,7 +21,7 @@ class ATM {
             balance -= amount;
             System.out.println("Withdrawn ₹" + amount);
         } else {
-            System.out.println("Insufficient balance.");
+            System.out.println("Insufficient funds !");
         }
     }
 
@@ -30,9 +30,9 @@ class ATM {
     }
 
     public static void main(String[] args) {
-        ATM acc = new ATM("Arjun Raghav", 123456789L, 10000);
-        acc.deposit(2000);
-        acc.withdraw(5000);
+        ATM acc = new ATM("Arihant Jain", 2215000337, 98728.02);
+        acc.deposit(27005);
+        acc.withdraw(56020);
         acc.displayBalance();
     }
 }

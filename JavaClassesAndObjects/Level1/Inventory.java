@@ -1,22 +1,28 @@
-class EmployeeDetails {
-    String name;
-    int id;
-    double salary;
+class Inventory {
+    int itemCode;
+    String itemName;
+    double price;
 
-    EmployeeDetails(String name, int id, double salary) {
-        this.name = name;
-        this.id = id;
-        this.salary = salary;
+    Inventory(int itemCode, String itemName, double price) {
+        this.itemCode = itemCode;
+        this.itemName = itemName;
+        this.price = price;
     }
 
     void displayDetails() {
-        System.out.println("Employee ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Salary: ₹" + salary);
+        System.out.println("Item Code: " + itemCode);
+        System.out.println("Item Name: " + itemName);
+        System.out.println("Price per unit: ₹" + price);
+    }
+
+    double calculateTotalCost(int quantity) {
+        return price * quantity;
     }
 
     public static void main(String[] args) {
-        EmployeeDetails emp = new EmployeeDetails("Arjun Raghav", 101, 55000);
-        emp.displayDetails();
+        Inventory item = new Inventory(347, "Notebook", 72);
+        item.displayDetails();
+        int quantity = 22;
+        System.out.println("Total cost for " + quantity + " items: ₹" + item.calculateTotalCost(quantity));
     }
 }
