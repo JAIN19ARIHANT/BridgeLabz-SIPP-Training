@@ -3,13 +3,6 @@
 This repository contains Java programs developed as part of the BridgeLabz SIPP Training. The projects are organized into categories like "JavaClassesAndObjects" and "JavaConstructors", further sub-divided into different levels and specific problem sets.
 
 
-
-# BridgeLabz-SIPP-Training
-
-This repository contains Java programs developed as part of the BridgeLabz SIPP Training. The projects are organized into categories like "JavaClassesAndObjects" and "JavaConstructors", further sub-divided into different levels and specific problem sets.
-
-
-
 ## Repository Structure
 
 The repository is structured as follows:
@@ -29,6 +22,10 @@ BridgeLabz-SIPP-Training/
 │       ├── Shoppingcart.java
 │       └── Student.java
 └── JavaConstructors/
+├── AccessModifiers/
+│   ├── BankAccount.java
+│   ├── Book.java
+│   └── Student.java
 ├── InstanceVsClass/
 │   ├── Course/
 │   │   └── Course.java
@@ -43,9 +40,7 @@ BridgeLabz-SIPP-Training/
 ├── HotelBooking.java
 ├── Library.java
 └── Person.java
-
 ```
-
 
 ## JavaClassesAndObjects
 
@@ -68,7 +63,15 @@ This section contains programs demonstrating the concepts of classes and objects
 
 ## JavaConstructors
 
-This section focuses on the usage and types of constructors in Java.
+This section focuses on the usage and types of constructors in Java, along with related Java concepts.
+
+### AccessModifiers
+
+This sub-section contains examples demonstrating the use of access modifiers (`public`, `private`, `protected`, default) in Java classes and their members.
+
+* `BankAccount.java`: Illustrates access modifiers in a bank account context.
+* `Book.java`: Demonstrates access modifiers for a Book class.
+* `Student.java`: Shows the application of access modifiers for student data.
 
 ### InstanceVsClass
 
