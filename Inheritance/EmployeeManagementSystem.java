@@ -2,7 +2,6 @@ public class EmployeeManagementSystem {
     public static void main(String[] args) {
 
         Manager m1 = new Manager("Arihant Jain", 7,345676.65, 3);
-
         m1.displayDetails();
         System.out.println();
 
