@@ -1,0 +1,36 @@
+# Ignore IDE-specific files
+.idea/
+*.iml
+
+# Ignore build output directories
+out/
+target/
+bin/
+build/
+
+# Ignore class files and compiled binaries
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore OS-specific files (Windows)
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs and temp
+*.log
+*.tmp
+
+# Ignore system-level clutter
+.DS_Store
+*.swp
+
+# Optional: ignore test reports and cache folders
+/test-output/
+/.cache/
+
+# Optional: ignore local environment config
+.env
+*.bak
