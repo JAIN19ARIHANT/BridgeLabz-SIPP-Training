@@ -5,6 +5,10 @@ public class Product<T> {
     private double price;
     private final T category;
 
+    private final String RESET = "\u001b[0m";
+    private final String GREEN = "\u001b[32m";
+    private final String BLUE  = "\u001b[34m";
+
     public Product (String name, double price, T category) {
         this.name = name;
         this.price = price;
@@ -21,6 +25,11 @@ public class Product<T> {
 
     @Override
     public String toString() {
-        return String.format("Product : %s, Price : %.2f, Category : %s", this.name, this.price, this.category);
+        return String.format(
+                  GREEN + "Product : " + BLUE + "%s, "
+                + GREEN + "Price : " + BLUE + "%.2f, "
+                + GREEN + "Category : " + BLUE + "%s"
+                + RESET, this.name, this.price, this.category
+        );
     }
 }

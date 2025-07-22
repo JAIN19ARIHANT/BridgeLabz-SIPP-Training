@@ -1,4 +1,3 @@
 package OnlineMarketplace;
 
-public class ClothingCategory {
-}
+public enum ClothingCategory { MENS, WOMENS, KIDS }
