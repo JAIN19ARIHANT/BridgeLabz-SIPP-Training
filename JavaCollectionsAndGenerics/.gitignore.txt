@@ -1,0 +1,23 @@
+#  Java class files
+*.class
+
+#  Package files
+*.jar
+*.war
+*.ear
+
+#  IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+
+# Build directories
+target/
+out/
+build/
+
+#  Logs
+*.log
+
+#  OS-specific junk
+Thumbs.db
