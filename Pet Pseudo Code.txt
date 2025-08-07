@@ -1,0 +1,102 @@
+Class Pet :
+    Attributes :
+        name
+        age
+        breed
+        isAdopted
+
+    Constructor(name, age, breed) :
+        SET self.name = name
+        SET self.age = age
+        SET self.breed = breed
+        SET self.isAdopted = False
+
+    Method adopt():
+        SET self.isAdopted = True
+
+    Method display_info() :
+        PRINT "Name : ", self.name
+        PRINT "Age : ", self.age
+        PRINT "Breed : ", self.breed
+        PRINT "Adopted : ", self.isAdopted
+
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+
+Class Dog inherits Pet :
+    Attributes:
+        bark
+
+    Constructor(name, age, breed, bark) :
+        CALL super(name, age, breed)
+        SET self.bark = bark
+
+    Method display_info() :
+        CALL super.display_info()
+        PRINT "Bark : ", self.bark
+
+
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+
+
+Class Cat inherits Pet:
+    Attributes:
+        play
+
+    Constructor(name, age, breed, likes_to_climb):
+        CALL super(name, age, breed)
+        SET self.play = play
+
+    Method display_info():
+        CALL super.display_info()
+        PRINT "Play:", self.play
+
+
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+
+
+Class Bird inherits Pet:
+    Attributes:
+        can_fly
+
+    Constructor(name, age, breed, can_fly):
+        CALL super(name, age, breed)
+        SET self.can_fly = can_fly
+
+    Method display_info():
+        CALL super.display_info()
+        PRINT "Can Fly:", self.can_fly
+
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+
+
+Create dog1 = Dog("Spike", 3, "Bull Dog", "Loud")
+Create cat1 = Cat("Tom", 2, "Tom Cat", True)
+Create bird1 = Bird("Tweety", 1, "Yellow Canary", True)
+
+CALL dog1.display_info()
+CALL cat1.display_info()
+CALL bird1.display_info()
+
+CALL dog1.adopt()
+CALL dog1.display_info()
+
+10:35 AM 07-08-202510:35 AM 07-08-202510:35 AM 07-08-202510:35 AM 07-08-2025
+
+
+
+
+
+
+
