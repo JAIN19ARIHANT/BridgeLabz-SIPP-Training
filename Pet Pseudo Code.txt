@@ -92,7 +92,6 @@ CALL bird1.display_info()
 CALL dog1.adopt()
 CALL dog1.display_info()
 
-10:35 AM 07-08-202510:35 AM 07-08-202510:35 AM 07-08-202510:35 AM 07-08-2025
 
 
 
