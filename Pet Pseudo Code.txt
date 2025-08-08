@@ -1,9 +1,9 @@
 Class Pet :
     Attributes :
-        name
-        age
-        breed
-        isAdopted
+        STRING name
+        INTEGER age
+        STRING breed
+        BOOLEAN isAdopted
 
     Constructor(name, age, breed) :
         SET self.name = name
@@ -27,7 +27,7 @@ Class Pet :
 
 Class Dog inherits Pet :
     Attributes:
-        bark
+        STRING bark
 
     Constructor(name, age, breed, bark) :
         CALL super(name, age, breed)
@@ -46,7 +46,7 @@ Class Dog inherits Pet :
 
 Class Cat inherits Pet:
     Attributes:
-        play
+        STRING play
 
     Constructor(name, age, breed, likes_to_climb):
         CALL super(name, age, breed)
@@ -65,7 +65,7 @@ Class Cat inherits Pet:
 
 Class Bird inherits Pet:
     Attributes:
-        can_fly
+        BOOLEAN can_fly
 
     Constructor(name, age, breed, can_fly):
         CALL super(name, age, breed)
