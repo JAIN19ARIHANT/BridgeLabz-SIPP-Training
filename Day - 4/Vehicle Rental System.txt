@@ -1,0 +1,38 @@
+INTERFACE Rentable
+    METHOD rent()
+    METHOD returnVehicle()
+
+ABSTRACT CLASS Vehicle IMPLEMENTS Rentable
+    ATTRIBUTE vehicleId
+    ATTRIBUTE type
+
+    METHOD Vehicle(vehicleId, type)
+        SET this.vehicleId = vehicleId
+        SET this.type = type
+
+    METHOD rent()
+        PRINT "Vehicle rented"
+
+    METHOD returnVehicle()
+        PRINT "Vehicle returned"
+END CLASS
+
+CLASS Car EXTENDS Vehicle
+    METHOD Car(vehicleId)
+        CALL super(vehicleId, "Car")
+END CLASS
+
+CLASS Bike EXTENDS Vehicle
+    METHOD Bike(vehicleId)
+        CALL super(vehicleId, "Bike")
+END CLASS
+
+CLASS VehicleFactory
+    METHOD createVehicle(type, vehicleId)
+        IF type == "Car" THEN
+            RETURN new Car(vehicleId)
+        ELSE IF type == "Bike" THEN
+            RETURN new Bike(vehicleId)
+        ELSE
+            RETURN null
+END CLASS

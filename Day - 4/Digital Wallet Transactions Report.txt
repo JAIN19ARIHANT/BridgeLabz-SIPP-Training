@@ -1,0 +1,26 @@
+CLASS Transaction
+    ATTRIBUTE merchant
+    ATTRIBUTE amount
+    ATTRIBUTE date
+
+    METHOD Transaction(merchant, amount, date)
+        SET this.merchant = merchant
+        SET this.amount = amount
+        SET this.date = date
+END CLASS
+
+CLASS WalletReport
+    ATTRIBUTE transactions
+
+    METHOD WalletReport()
+        INITIALIZE transactions as empty list
+
+    METHOD addTransaction(transaction)
+        ADD transaction to transactions
+
+    METHOD generateReport()
+        GROUP transactions BY merchant AND month using streams
+        FOR EACH group
+            CALCULATE totalAmount
+            PRINT merchant + " " + month + " " + totalAmount
+END CLASS
