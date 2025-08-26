@@ -38,10 +38,8 @@ Class Dog inherits Pet :
         PRINT "Bark : ", self.bark
 
 
-
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
-
 
 
 Class Cat inherits Pet:
@@ -91,11 +89,3 @@ CALL bird1.display_info()
 
 CALL dog1.adopt()
 CALL dog1.display_info()
-
-
-
-
-
-
-
-
