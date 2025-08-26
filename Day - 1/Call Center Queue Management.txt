@@ -1,0 +1,45 @@
+CLASS Customer
+    ATTRIBUTE name
+    ATTRIBUTE priority
+
+    METHOD Customer(name, priority)
+        SET this.name = name
+        SET this.priority = priority
+END CLASS
+
+CLASS CallCenterQueue
+    ATTRIBUTE emergencyQueue
+    ATTRIBUTE normalQueue
+
+    METHOD CallCenterQueue()
+        INITIALIZE emergencyQueue as empty Queue
+        INITIALIZE normalQueue as empty Queue
+
+    METHOD enqueueCustomer(customer)
+        IF customer.priority == "emergency" THEN
+            ADD customer to emergencyQueue
+        ELSE
+            ADD customer to normalQueue
+
+    METHOD dequeueCustomer()
+        IF emergencyQueue is not empty THEN
+            RETURN REMOVE first customer from emergencyQueue
+        ELSE IF normalQueue is not empty THEN
+            RETURN REMOVE first customer from normalQueue
+        ELSE
+            PRINT "No customers in queue."
+
+    METHOD displayQueues()
+        FOR EACH customer IN emergencyQueue
+            PRINT customer.name
+        FOR EACH customer IN normalQueue
+            PRINT customer.name
+
+END CLASS
+
+CREATE queue = CallCenterQueue()
+queue.enqueueCustomer(Customer("Alice", "normal"))
+queue.enqueueCustomer(Customer("Bob", "emergency"))
+queue.enqueueCustomer(Customer("Charlie", "normal"))
+PRINT queue.dequeueCustomer().name
+PRINT queue.dequeueCustomer().name

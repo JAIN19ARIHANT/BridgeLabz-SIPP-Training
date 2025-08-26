@@ -1,0 +1,30 @@
+CLASS Employee
+    ATTRIBUTE name
+    ATTRIBUTE department
+
+    METHOD Employee(name, department)
+        SET this.name = name
+        SET this.department = department
+END CLASS
+
+CLASS EmployeeRecords
+    ATTRIBUTE employeeList
+
+    METHOD EmployeeRecords()
+        INITIALIZE employeeList as empty ArrayList
+
+    METHOD addEmployee(employee)
+        ADD employee to employeeList
+
+    METHOD filterByDepartment(dept)
+        SET filteredList = employees where employee.department == dept using stream
+        FOR EACH employee IN filteredList
+            PRINT employee.name
+
+END CLASS
+
+CREATE records = EmployeeRecords()
+records.addEmployee(Employee("Dileep", "HR"))
+records.addEmployee(Employee("Arihant", "IT"))
+records.addEmployee(Employee("Arjun", "HR"))
+records.filterByDepartment("HR")

@@ -1,0 +1,40 @@
+CLASS TextEditor
+    ATTRIBUTE textBuffer
+    ATTRIBUTE undoStack
+
+    METHOD TextEditor()
+        SET textBuffer = ""
+        INITIALIZE undoStack as empty Stack
+
+    METHOD insertText(newText)
+        PUSH current textBuffer to undoStack
+        APPEND newText to textBuffer
+
+    METHOD deleteText(numChars)
+        PUSH current textBuffer to undoStack
+        REMOVE last numChars from textBuffer
+
+    METHOD undo()
+        IF undoStack is not empty THEN
+            SET textBuffer = POP from undoStack
+        ELSE
+            PRINT "Nothing to undo."
+
+    METHOD displayText()
+        PRINT textBuffer
+
+END CLASS
+
+CREATE editor = TextEditor()
+editor.insertText("Hello")
+editor.insertText(" World")
+editor.displayText()
+
+editor.undo()
+editor.displayText()
+
+editor.deleteText(2)
+editor.displayText()
+
+editor.undo()
+editor.displayText()

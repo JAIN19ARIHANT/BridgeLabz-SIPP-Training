@@ -1,0 +1,28 @@
+Class Member :
+    Attributes :
+        INTEGER id
+        STRING name
+        DATE dateOfJoining
+        INTEGER membershipDuration
+
+    Constructor(id, name, dateOfJoining, membershipDuration) :
+        SET self.id = id;
+        SET self.name = name;
+        SET self.dateOfJoining = dateOfJoining
+        SET self.membershipDuration = membershipDuration
+
+    Method isValidMember() :
+        IF membershipDuration < 356 THEN
+            RETURN True
+        ELSE
+            RETURN False
+
+END CLASS
+
+-----------------------------------------------------------------
+
+CREATE Member m1 = new Member(7, "Arihant Jain", "03-05-2025", 64)
+IF m1.isValidMember() THEN
+    PRINT "Membership is valid."
+ELSE
+    PRINT "Membership has expired."
