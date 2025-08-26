@@ -38,8 +38,8 @@ CLASS CallCenterQueue
 END CLASS
 
 CREATE queue = CallCenterQueue()
-queue.enqueueCustomer(Customer("Alice", "normal"))
-queue.enqueueCustomer(Customer("Bob", "emergency"))
-queue.enqueueCustomer(Customer("Charlie", "normal"))
+queue.enqueueCustomer(Customer("Arihant", "normal"))
+queue.enqueueCustomer(Customer("Bhuvnesh", "emergency"))
+queue.enqueueCustomer(Customer("Madhav", "normal"))
 PRINT queue.dequeueCustomer().name
 PRINT queue.dequeueCustomer().name
