@@ -1,0 +1,21 @@
+CLASS AttendanceTracker
+    ATTRIBUTE attendance: 2D Array of Char [students][days]
+
+    METHOD markAttendance(studentId, day, status)
+        SET attendance[studentId][day] = status
+
+    METHOD updateAttendance(studentId, day, newStatus)
+        SET attendance[studentId][day] = newStatus
+
+    METHOD generateReport(studentId)
+        SET count = 0
+        FOR EACH day IN attendance[studentId]
+            IF day == 'P' THEN INCREMENT count
+        PRINT "Student " + studentId + " was present for " + count + " days"
+END CLASS
+
+CREATE tracker = new AttendanceTracker()
+CALL tracker.markAttendance(1, 1, 'P')
+CALL tracker.markAttendance(1, 2, 'A')
+CALL tracker.updateAttendance(1, 2, 'P')
+CALL tracker.generateReport(1)

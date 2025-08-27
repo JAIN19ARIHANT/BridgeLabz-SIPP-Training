@@ -1,0 +1,12 @@
+CLASS WordCounter
+    METHOD countWords(paragraph)
+        SPLIT paragraph INTO words
+        NORMALIZE: lowercase, remove punctuation
+        FOR EACH word
+            INCREMENT word count IN Map<String, Integer>
+        SORT map BY value DESCENDING
+        PRINT sorted word frequencies
+END CLASS
+
+CREATE counter = new WordCounter()
+counter.countWords("The news today is about the rise in technology trends.")

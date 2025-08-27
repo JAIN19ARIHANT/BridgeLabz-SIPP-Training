@@ -1,0 +1,47 @@
+CLASS Ticket
+    ATTRIBUTE movieName, seatNumber, price, isBooked
+
+    METHOD Ticket(movieName, seatNumber, price)
+        SET attributes
+        SET isBooked = true
+
+    METHOD cancel()
+        SET isBooked = false
+END CLASS
+
+CLASS Theatre
+    ATTRIBUTE schedule: Map<String, List<String>>
+    ATTRIBUTE issuedTickets: List<Ticket>
+
+    METHOD bookTicket(movie, seat)
+        IF seat IN schedule[movie] THEN
+            REMOVE seat FROM schedule[movie]
+            CREATE ticket = new Ticket(movie, seat, price)
+            ADD ticket TO issuedTickets
+            RETURN ticket
+        ELSE
+            PRINT "Seat not available"
+            RETURN null
+
+    METHOD cancelTicket(ticket)
+        IF ticket.isBooked THEN
+            CALL ticket.cancel()
+            ADD ticket.seatNumber BACK TO schedule[ticket.movieName]
+END CLASS
+
+CLASS Customer
+    ATTRIBUTE name
+
+    METHOD bookMovie(theatre, movie, seat)
+        RETURN theatre.bookTicket(movie, seat)
+
+    METHOD cancelBooking(theatre, ticket)
+        CALL theatre.cancelTicket(ticket)
+END CLASS
+
+CREATE theatre = new Theatre()
+ADD "Avengers: Endgame" → ["A12", "A13"] TO schedule
+
+CREATE customer = new Customer("Ravi")
+ticket = customer.bookMovie(theatre, "Avengers: Endgame", "A12")
+customer.cancelBooking(theatre, ticket)

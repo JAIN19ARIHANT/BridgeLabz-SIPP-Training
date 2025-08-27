@@ -1,0 +1,31 @@
+CLASS BusStop
+    ATTRIBUTE name
+    ATTRIBUTE next: BusStop
+END CLASS
+
+CLASS BusRoute
+    ATTRIBUTE head: BusStop
+
+    METHOD addStop(afterStopName, newStopName)
+        TRAVERSE list UNTIL stop.name == afterStopName
+        CREATE newStop
+        INSERT newStop AFTER found stop
+
+    METHOD removeStop(stopName)
+        TRAVERSE list TO FIND AND REMOVE stop WITH stopName
+
+    METHOD searchStop(stopName)
+        TRAVERSE list
+        IF found THEN PRINT "Stop exists"
+        ELSE PRINT "Stop not found"
+
+    METHOD printRoute()
+        TRAVERSE list AND PRINT stop names
+END CLASS
+
+CREATE route = new BusRoute()
+ADD stops: Depot → Main Street → City Mall → Hospital → Airport
+
+CALL route.addStop("City Mall", "University")
+CALL route.removeStop("Hospital")
+CALL route.searchStop("Airport")

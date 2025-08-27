@@ -1,0 +1,32 @@
+CLASS User
+    ATTRIBUTE username, password
+
+    METHOD login()
+        PRINT "Generic login for user"
+END CLASS
+
+CLASS Student EXTENDS User
+    ATTRIBUTE enrolledCourses: List<String>
+
+    METHOD login()
+        IF username AND password ARE VALID AND enrolledCourses IS NOT EMPTY THEN
+            PRINT "Student login successful. Show available exams."
+        ELSE
+            PRINT "Access denied. Not enrolled."
+END CLASS
+
+CLASS Admin EXTENDS User
+    ATTRIBUTE isAdmin: Boolean
+
+    METHOD login()
+        IF username AND password ARE VALID AND isAdmin IS TRUE THEN
+            PRINT "Admin login successful. Show exam management tools."
+        ELSE
+            PRINT "Access denied. Not an admin."
+END CLASS
+
+CREATE student = new Student("john123", "pass123", ["Math", "Physics"])
+student.login()
+
+CREATE admin = new Admin("admin01", "adminpass", true)
+admin.login()
