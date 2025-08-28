@@ -15,6 +15,6 @@ public class RestCheckpoint extends Checkpoint {
 
     @Override
     public double calculatePenalty() {
-        return (actualDuration - expectedDuration) > 30 ? (actualDuration - expectedDuration)/2.0 : 0;
+        return (getActualDuration() - getExpectedDuration()) > 30 ? (getActualDuration() - getExpectedDuration())/2.0 : 0;
     }
 }

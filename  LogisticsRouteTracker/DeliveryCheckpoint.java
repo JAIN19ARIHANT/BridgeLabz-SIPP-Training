@@ -16,6 +16,6 @@ public class DeliveryCheckpoint extends Checkpoint {
 
     @Override
     public double calculatePenalty() {
-        return isDelayed() ? (actualDuration - expectedDuration) * 2.0 : 0.0;
+        return isDelayed() ? (getActualDuration() - getExpectedDuration()) * 2.0 : 0.0;
     }
 }
