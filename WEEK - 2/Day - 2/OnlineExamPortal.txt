@@ -19,8 +19,10 @@ class Admin(User):
         else:
             Deny access
 
-student = Student("john123", "password")
+student = Student("Arihant", "password")
 student.login()
 
 admin = Admin("adminUser", "adminPass")
 admin.login()
+
+

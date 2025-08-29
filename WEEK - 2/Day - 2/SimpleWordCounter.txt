@@ -32,3 +32,5 @@ counter = WordCounter()
 counter.countWords(text)
 mostFrequent = counter.getMostFrequentWord()
 rareWords = counter.getRarelyUsedWords(1)
+
+

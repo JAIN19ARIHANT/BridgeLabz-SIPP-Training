@@ -32,3 +32,5 @@ report.addResponse(SurveyResponse("KFC", 4))
 report.addResponse(SurveyResponse("Subway", 5))
 report.addResponse(SurveyResponse("Subway", 4))
 averageRatings = report.generateReport()
+
+

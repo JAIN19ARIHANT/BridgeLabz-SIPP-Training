@@ -38,5 +38,8 @@ car.calculateFee("1:30 PM")
 bike = Bike("KA05XY7890", "11:15 AM")
 bike.calculateFee("12:00 PM")
 
+
 truck = Truck("KA09TR5566", "09:30 AM")
 truck.calculateFee("2:00 PM")
+
+

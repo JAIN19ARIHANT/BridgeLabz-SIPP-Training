@@ -28,8 +28,8 @@ class AttendanceMarker:
         return defaulters
 
 attendance = AttendanceMarker()
-attendance.markAttendance(0, 0, 1)  // Student 1 present on Day 1
-attendance.markAttendance(2, 0, 0)  // Student 3 absent on Day 1
+attendance.markAttendance(0, 0, 1)
+attendance.markAttendance(2, 0, 0)
 
 dailyCount = attendance.dailySummary(10)
 studentAttendance = attendance.monthlySummary(5)
