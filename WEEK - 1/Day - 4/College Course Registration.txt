@@ -1,0 +1,31 @@
+CLASS Student
+    ATTRIBUTE name
+
+    METHOD Student(name)
+        SET this.name = name
+END CLASS
+
+CLASS Course
+    ATTRIBUTE courseName
+
+    METHOD Course(courseName)
+        SET this.courseName = courseName
+END CLASS
+
+CLASS RegistrationSystem
+    ATTRIBUTE courseMap
+
+    METHOD RegistrationSystem()
+        INITIALIZE courseMap as empty Map<Course, List<Student>>
+
+    METHOD register(course, student)
+        IF course NOT IN courseMap THEN
+            SET courseMap[course] = new List
+        ADD student to courseMap[course]
+
+    METHOD displayRegistrations()
+        FOR EACH course IN courseMap
+            PRINT course.courseName
+            FOR EACH student IN courseMap[course]
+                PRINT student.name
+END CLASS

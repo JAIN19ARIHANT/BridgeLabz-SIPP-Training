@@ -1,0 +1,20 @@
+CLASS StudentScores
+    ATTRIBUTE scoresMap
+
+    METHOD StudentScores()
+        INITIALIZE scoresMap as empty HashMap
+
+    METHOD addScore(name, score)
+        SET scoresMap[name] = score
+
+    METHOD displayTopScorer()
+        SET topScorer = name with max score using stream
+        PRINT topScorer + " " + scoresMap[topScorer]
+
+END CLASS
+
+CREATE scores = StudentScores()
+scores.addScore("Ravi", 85)
+scores.addScore("Meena", 92)
+scores.addScore("Amit", 78)
+scores.displayTopScorer()

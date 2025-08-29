@@ -1,0 +1,71 @@
+Class Customer :
+    Attributes :
+        STRING name
+        STRING address
+
+    Constructor(name, address) :
+        SET self.name = name
+        SET self.address = address
+
+//------------------------------------------------------------------------
+
+Class Restaurant :
+    Attributes :
+        STRING name
+        STRING location
+        LIST<STRING> menuItems
+
+    Constructor(name, location) :
+        SET self.name = name
+        SET self.location = location
+
+//------------------------------------------------------------------------
+
+Class DeliveryBoy :
+    Attributes :
+        STRING name
+        STRING vehicleNumber
+
+    Constructor(name, vehicleNumber) :
+        SET self.name = name
+        SET self.vehicleNumber = vehicleNumber
+
+//------------------------------------------------------------------------
+
+Class Order :
+    Attributes :
+        INTEGER orderId
+        Customer customerDetails
+        Restaurant restaurantDetails
+        DeliveryBoy deliveryBoyDetails
+        STRING status
+
+    Constructor(orderId, customer, restaurant, deliveryBoy) :
+        SET self.orderId = orderId
+        SET self.customerDetails = customer
+        SET self.restaurantDetails = restaurant
+        SET self.deliveryBoyDetails = deliveryBoy
+        SET self.status = "Placed"
+
+    Method updateStatus(newStatus) :
+        SET self.status = newStatus
+        PRINT "Order ", self.orderId, " status updated to: ", self.status
+
+    Method displayOrderDetails() :
+        PRINT "Order ID: ", self.orderId
+        PRINT "Customer: ", self.customerDetails.name, ", Address: ", self.customerDetails.address
+        PRINT "Restaurant: ", self.restaurantDetails.name
+        PRINT "Delivery Boy: ", self.deliveryBoyDetails.name
+        PRINT "Status: ", self.status
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Create customer1 = Customer("Arihant Jain", "74, Jaipur")
+Create restaurant1 = Restaurant("Green Apple", "456 Oak Ave")
+Create deliveryBoy1 = DeliveryBoy("Pushpendra", "RJ-14-PU-8055")
+
+Create order1 = Order(101, customer1, restaurant1, deliveryBoy1)
+CALL order1.displayOrderDetails()
+
+CALL order1.updateStatus("Out for Delivery")

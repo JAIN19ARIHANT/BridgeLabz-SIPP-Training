@@ -1,0 +1,37 @@
+CLASS Zone
+    ATTRIBUTE zoneId
+    ATTRIBUTE riskLevel
+    ATTRIBUTE neighbors
+
+    METHOD Zone(zoneId, riskLevel)
+        SET this.zoneId = zoneId
+        SET this.riskLevel = riskLevel
+        INITIALIZE neighbors as empty list
+
+    METHOD addNeighbor(zone)
+        ADD zone to neighbors
+END CLASS
+
+CLASS CityGraph
+    ATTRIBUTE zones
+
+    METHOD CityGraph()
+        INITIALIZE zones as empty map
+
+    METHOD addZone(zone)
+        SET zones[zone.zoneId] = zone
+
+    METHOD dfs(zoneId, visited, threshold)
+        IF zoneId IN visited THEN
+            RETURN
+        ADD zoneId to visited
+        IF zones[zoneId].riskLevel >= threshold THEN
+            PRINT "High-risk zone: " + zoneId
+        FOR EACH neighbor IN zones[zoneId].neighbors
+            CALL dfs(neighbor.zoneId, visited, threshold)
+
+    METHOD findHighRiskZones(threshold)
+        INITIALIZE visited as empty set
+        FOR EACH zoneId IN zones
+            CALL dfs(zoneId, visited, threshold)
+END CLASS

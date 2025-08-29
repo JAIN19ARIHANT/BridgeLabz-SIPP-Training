@@ -1,0 +1,31 @@
+CLASS Flight
+    ATTRIBUTE flightNumber
+    ATTRIBUTE price
+    ATTRIBUTE duration
+
+    METHOD Flight(flightNumber, price, duration)
+        SET this.flightNumber = flightNumber
+        SET this.price = price
+        SET this.duration = duration
+END CLASS
+
+CLASS FlightAnalyzer
+    METHOD mergeSort(flightList)
+        IF flightList.size <= 1 THEN
+            RETURN flightList
+        SPLIT flightList into left and right
+        RETURN merge(mergeSort(left), mergeSort(right))
+
+    METHOD merge(left, right)
+        INITIALIZE result as empty list
+        WHILE left and right not empty
+            IF left[0].price < right[0].price OR
+               (left[0].price == right[0].price AND left[0].duration < right[0].duration) THEN
+                ADD left[0] to result
+                REMOVE left[0]
+            ELSE
+                ADD right[0] to result
+                REMOVE right[0]
+        ADD remaining items from left and right to result
+        RETURN result
+END CLASS

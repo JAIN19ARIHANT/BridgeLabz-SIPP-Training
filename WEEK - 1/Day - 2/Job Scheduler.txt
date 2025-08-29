@@ -1,0 +1,36 @@
+CLASS Job
+    ATTRIBUTE name
+    ATTRIBUTE deadline
+    ATTRIBUTE processingTime
+
+    METHOD Job(name, deadline, processingTime)
+        SET this.name = name
+        SET this.deadline = deadline
+        SET this.processingTime = processingTime
+END CLASS
+
+CLASS JobScheduler
+    ATTRIBUTE jobQueue  // PriorityQueue<Job>
+
+    METHOD JobScheduler()
+        INITIALIZE jobQueue as empty PriorityQueue with comparator:
+            FIRST by deadline ASCENDING
+            THEN by processingTime ASCENDING
+
+    METHOD addJob(job)
+        ADD job to jobQueue
+
+    METHOD scheduleJobs()
+        WHILE jobQueue is not empty
+            SET job = REMOVE job with highest priority from jobQueue
+            PRINT "Scheduling job: " + job.name + " (Deadline: " + job.deadline + ", Time: " + job.processingTime + ")"
+
+END CLASS
+
+CREATE scheduler = JobScheduler()
+scheduler.addJob(Job("Email Backup", 5, 2))
+scheduler.addJob(Job("Security Scan", 3, 4))
+scheduler.addJob(Job("System Update", 3, 1))
+scheduler.addJob(Job("Report Generation", 7, 3))
+
+scheduler.scheduleJobs()

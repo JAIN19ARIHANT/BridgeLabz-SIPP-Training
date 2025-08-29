@@ -1,0 +1,45 @@
+CLASS Account
+    ATTRIBUTE accountNumber
+    ATTRIBUTE balance
+
+    METHOD Account(accountNumber, balance)
+        SET this.accountNumber = accountNumber
+        SET this.balance = balance
+
+    METHOD withdraw(amount)
+        IF balance >= amount THEN
+            SET balance = balance - amount
+        ELSE
+            PRINT "Insufficient funds"
+
+    METHOD displayBalance()
+        PRINT balance
+END CLASS
+
+CLASS SavingAccount EXTENDS Account
+    ATTRIBUTE minimumBalance
+
+    METHOD SavingAccount(accountNumber, balance, minimumBalance)
+        CALL super(accountNumber, balance)
+        SET this.minimumBalance = minimumBalance
+
+    METHOD withdraw(amount)
+        IF balance - amount >= minimumBalance THEN
+            SET balance = balance - amount
+        ELSE
+            PRINT "Cannot withdraw below minimum balance"
+END CLASS
+
+CLASS CurrentAccount EXTENDS Account
+    ATTRIBUTE overdraftLimit
+
+    METHOD CurrentAccount(accountNumber, balance, overdraftLimit)
+        CALL super(accountNumber, balance)
+        SET this.overdraftLimit = overdraftLimit
+
+    METHOD withdraw(amount)
+        IF balance + overdraftLimit >= amount THEN
+            SET balance = balance - amount
+        ELSE
+            PRINT "Overdraft limit exceeded"
+END CLASS
